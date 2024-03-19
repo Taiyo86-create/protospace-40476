@@ -7,6 +7,6 @@
     <p class="card__summary">
       <%= prototype.catch_copy %>
     </p>
-    <span class="card__user">by <%= prototype.user.name %></span>
+    <span class="card__user">by <%=link_to prototype.user.name, user_path(prototype) %></span>
   </div>
 </div>
