@@ -27,8 +27,8 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id])
-    unless user_signed_in?
-      redirect_to action: :index, status: :unprocessable_entity
+    unless user_signed_in? && current_user.id == @prototype.user
+      redirect_to action: :index
     end
   end
 
